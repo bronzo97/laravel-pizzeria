@@ -15,6 +15,14 @@ class CreatePizzasTable extends Migration
     {
         Schema::create('pizzas', function (Blueprint $table) {
             $table->id();
+
+            $table->tinyInteger('pizza_name');
+            $table->mediumText('ingredients');
+            $table->float('price', 5, 2);
+            $table->tinyInteger('size');
+            $table->smallInteger('nutritional_values');
+            $table->boolean('vegan')->default(0);
+
             $table->timestamps();
         });
     }
