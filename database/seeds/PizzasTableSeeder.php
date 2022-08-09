@@ -1,7 +1,8 @@
 <?php
 
+use App\Pizza;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
 
 class PizzasTableSeeder extends Seeder
 {
@@ -12,13 +13,15 @@ class PizzasTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pizzas')->insert([
-            'pizza_name'=>'Margherita',
-            'ingredients'=>'Pomodoro, mozzarella, basilico',
-            'price'=>'4.50',
-            'size'=>'regular',
-            'nutritional_values'=>'700Kcal',
-            'vegan'=>0,
-        ]);
+        $data = new Pizza();
+
+        $data->pizza_name = "Margherita";
+        $data->ingredients = "Pomodoro, mozzarella, basilico";
+        $data->price = "4.50";
+        $data->size = "Regular";
+        $data->nutritional_values = "700Kcal";
+        $data->vegan = 0;
+
+        $data->save();
     }
 }
