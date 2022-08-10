@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// index
+
 Route::get('/', function () {
     return view('pizzas.index');
 });
 
 Route::get("/", "PizzaController@index")->name("pizzas.index");
+Route::get("/pizzas/{pizza}", "PizzaController@show")->name("pizzas.show");
+
+
+// Admin
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get("/admin", "AdminController@index")->name("admin.index");
+// Route::get("/admin/pizzas/{pizza}", "PizzaController@show")->name("admin.show");
+

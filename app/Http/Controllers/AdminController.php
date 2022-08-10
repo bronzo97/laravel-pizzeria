@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Pizza;
 use Illuminate\Http\Request;
 
-class PizzaController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class PizzaController extends Controller
     {
         $pizzas = Pizza::all();
 
-        return view('pizzas.index', compact('pizzas'));
+        return view('admin.index', compact('pizzas'));
     }
 
     /**
@@ -48,12 +49,7 @@ class PizzaController extends Controller
      */
     public function show($id)
     {
-        $pizza = Pizza::findOrFail($id);
-
-        return view('pizzas.show', [
-            'pizza' => $pizza
-        ]);
-
+        //
     }
 
     /**
