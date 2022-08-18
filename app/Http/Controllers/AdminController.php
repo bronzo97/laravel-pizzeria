@@ -49,7 +49,11 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        $pizza = Pizza::findOrFail($id);
+
+        return view('admin.show', [
+            'pizza' => $pizza
+        ]);
     }
 
     /**

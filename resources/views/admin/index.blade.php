@@ -11,7 +11,7 @@
                 <h3 class="card-title">{{ $pizza['pizza_name'] }}</h3>
                 <p class="card-text">{{ $pizza['ingredients'] }}</p>
                 <p class="card-text">{{ $pizza['price'] }} €</p>
-                <a href="{{ route("pizzas.show", $pizza->id) }}" class="btn btn-primary">More Details</a>
+                <a href="{{ route("admin.show", $pizza->id) }}" class="btn btn-primary">More Details</a>
             </div>
         </div>
         @endforeach

@@ -30,5 +30,5 @@ Route::get('/admin', function () {
 });
 
 Route::get("/admin", "AdminController@index")->name("admin.index");
-// Route::get("/admin/pizzas/{pizza}", "PizzaController@show")->name("admin.show");
+Route::get("/admin/pizzas/{pizza}", "AdminController@show")->name("admin.show");
 
