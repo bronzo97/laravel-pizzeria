@@ -27,7 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -38,7 +38,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newPizza = new Pizza();
+        $newPizza->fill($data);
+
+
+        $newPizza->save();
+
+        return redirect()->route("admin.show", $newPizza->id);
     }
 
     /**
