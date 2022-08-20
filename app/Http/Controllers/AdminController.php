@@ -70,9 +70,14 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pizza $pizza)
     {
-        //
+        return view(
+            "admin.edit",
+            [
+                "pizza" => $pizza
+            ]
+        );
     }
 
     /**
@@ -82,9 +87,13 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pizza $pizza)
     {
-        //
+        $data = $request->all();
+
+        $pizza->update($data);
+
+        return redirect()->route("admin.show", $pizza->id);
     }
 
     /**

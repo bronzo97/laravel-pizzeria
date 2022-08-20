@@ -29,9 +29,18 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
+// index
 Route::get("/admin", "AdminController@index")->name("admin.index");
+
+// show
 Route::get("/admin/pizzas/{pizza}", "AdminController@show")->name("admin.show");
+
+// create
 Route::get("/admin/create", "AdminController@create")->name("admin.create");
 Route::post("/admin", "AdminController@store")->name("admin.store");
+
+// edit
+Route::get("/admin/{pizza}/edit", "AdminController@edit")->name("admin.edit");
+Route::put("/admin/{pizza}", "AdminController@update")->name("admin.update");
 
 

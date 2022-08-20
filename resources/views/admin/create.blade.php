@@ -22,14 +22,15 @@
             <div class="form-group row m-3">
                 <label for="price" class="col-sm-2 col-form-label">Price:</label>
                 <div class="col-sm-10">
-                <input type="number" class="form-control" name="price" id="price" placeholder="Price">
+                <input type="number" class="form-control" name="price" id="price" placeholder="Price" step="0.01">
                 </div>
             </div>
             <div class="form-group row m-3">
                 <label for="size" class="col-sm-2 col-form-label">Size:</label>
                 <div class="col-sm-10">
                     <select id="size" name="size" class="form-control">
-                        <option selected>Small</option>
+                        <option selected>...</option>
+                        <option>Small</option>
                         <option>Regular</option>
                         <option>Big</option>
                         <option>Huge</option>

@@ -16,6 +16,7 @@
                                 <p class="card-text">{{ $pizza['ingredients'] }}</p>
                                 <p class="card-text">{{ $pizza['price'] }} €</p>
                                 <a href="{{ route("admin.show", $pizza->id) }}" class="btn btn-primary">More Details</a>
+                                <a href="{{ route("admin.edit", $pizza->id) }}" class="btn btn-primary">Edit</a>
                             </div>
                         </div>
                     </div>
