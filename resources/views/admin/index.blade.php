@@ -17,6 +17,13 @@
                                 <p class="card-text">{{ $pizza['price'] }} €</p>
                                 <a href="{{ route("admin.show", $pizza->id) }}" class="btn btn-primary">More Details</a>
                                 <a href="{{ route("admin.edit", $pizza->id) }}" class="btn btn-primary">Edit</a>
+
+                                <form action="{{ route("admin.destroy", $pizza->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>

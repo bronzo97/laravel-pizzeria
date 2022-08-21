@@ -43,4 +43,5 @@ Route::post("/admin", "AdminController@store")->name("admin.store");
 Route::get("/admin/{pizza}/edit", "AdminController@edit")->name("admin.edit");
 Route::put("/admin/{pizza}", "AdminController@update")->name("admin.update");
 
-
+// delate
+Route::delete("/admin/{pizza}", "AdminController@destroy")->name("admin.destroy");
